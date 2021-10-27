@@ -21,7 +21,6 @@
                      <img src="img/logo.svg" alt="logo">
                   </a>
                   <form action="search" class="search">
-                     <input class="search__btn" id="form-search__btn" type="search">
                      <label for="form-search__btn">
                         <svg class="header__icon" width="26" height="26" viewBox="0 0 27 28"
                            xmlns="http://www.w3.org/2000/svg">
@@ -29,6 +28,7 @@
                               d="M19.0596 17.6259C20.6713 15.8658 21.6282 13.6048 21.7698 11.2225C21.9113 8.84018 21.2288 6.48173 19.8369 4.54318C18.445 2.60463 16.4285 1.20404 14.126 0.576619C11.8234 -0.0508009 9.3751 0.13316 7.19217 1.09761C5.00923 2.06205 3.22463 3.74825 2.13804 5.87302C1.05145 7.9978 0.729054 10.4318 1.225 12.7661C1.72094 15.1005 3.00501 17.1932 4.86158 18.6927C6.71814 20.1922 9.03413 21.0072 11.4206 21.0009C13.673 21.004 15.8645 20.27 17.6606 18.9109L25.4086 26.7179C25.4941 26.807 25.5965 26.8781 25.7099 26.927C25.8232 26.9759 25.9452 27.0017 26.0686 27.0029C26.1923 27.0033 26.3148 26.9782 26.4283 26.9292C26.5419 26.8801 26.6441 26.8082 26.7286 26.7179C26.9025 26.537 26.9997 26.2958 26.9997 26.0449C26.9997 25.794 26.9025 25.5528 26.7286 25.3719L19.0596 17.6259ZM2.88662 10.5009C2.89946 8.81563 3.41094 7.17187 4.35659 5.77685C5.30224 4.38183 6.63972 3.29801 8.20044 2.662C9.76115 2.02599 11.4752 1.86627 13.1266 2.20298C14.7779 2.53969 16.2926 3.35775 17.4797 4.55404C18.6668 5.75033 19.4732 7.27129 19.7972 8.92519C20.1212 10.5791 19.9483 12.2919 19.3002 13.8476C18.6522 15.4034 17.5581 16.7325 16.1559 17.6674C14.7536 18.6023 13.1059 19.1011 11.4206 19.1009C9.14916 19.0901 6.97482 18.1784 5.37484 16.566C3.77486 14.9537 2.87998 12.7724 2.88662 10.5009Z" />
                         </svg>
                      </label>
+                     <input class="search__btn" id="form-search__btn" type="search">
                   </form>
                </div>
                <div class="header__right">
@@ -38,11 +38,8 @@
                      </label>
                      <input class="menu__input" id="menu__switch" type="checkbox">
                      <ul class="menu-list">
-                        <label for="menu__switch--open">
-                           <span class="menu-list__cross"></span>
-                        </label>
-                        <input class="menu__input" id="menu__switch--open" type="checkbox">
-                        <span>menu</span>
+                        <li><a class="menu-list__cross" href="index.html"></a></li>
+                        <li><span>menu</span></li>
                         <li class="menu-list__categories">
                            <a href="#">man</a>
                            <ul class="menu-list__sublist">
@@ -105,7 +102,7 @@
                         </li>
                      </ul>
                   </nav>
-                  <a href="#" class="header__contacts">
+                  <a href="registration.html" class="header__contacts">
                      <svg class="header__icon header_pl" width="29" height="29" viewBox="0 0 29 29"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -132,22 +129,30 @@
          </div>
          <main class="main-content container">
             <section class="categories">
-               <div class="categories__item categories__item_woman">
-                  <span class="categories__title">30% off</span>
-                  <span class="categories__title categories__subtitle">for women</span>
-               </div>
-               <div class="categories__item categories__item_men">
-                  <span class="categories__title">hot deal</span>
-                  <span class="categories__title categories__subtitle">for men</span>
-               </div>
-               <div class="categories__item categories__item_kids">
-                  <span class="categories__title">new arrivals</span>
-                  <span class="categories__title categories__subtitle">for kids</span>
-               </div>
-               <div class="categories__item categories__item_accesories">
-                  <span class="categories__title">luxirous &amp;&nbsp;trendy</span>
-                  <span class="categories__title categories__subtitle">accesories</span>
-               </div>
+               <a class="categories__link categories__link_woman" href="#">
+                  <div class="categories__item categories__woman">
+                     <span class="categories__title">30% off</span>
+                     <span class="categories__title categories__subtitle">for women</span>
+                  </div>
+               </a>
+               <a class="categories__link categories__link_men" href="#">
+                  <div class="categories__item categories__men">
+                     <span class="categories__title">hot deal</span>
+                     <span class="categories__title categories__subtitle">for men</span>
+                  </div>
+               </a>
+               <a class="categories__link categories__link_kids" href="#">
+                  <div class="categories__item categories__kids">
+                     <span class="categories__title">new arrivals</span>
+                     <span class="categories__title categories__subtitle">for kids</span>
+                  </div>
+               </a>
+               <a class="categories__link categories__link_accesories" href="#">
+                  <div class="categories__item categories__accesories">
+                     <span class="categories__title">luxirous &amp;&nbsp;trendy</span>
+                     <span class="categories__title categories__subtitle">accesories</span>
+                  </div>
+               </a>
             </section>
             <section class="cards">
                <div class="cards__title">
@@ -171,7 +176,7 @@
                               <p class="card__price">$52.00</p>
                            </div>
                         </article>
-                        <button class="card__btn">
+                        <div class="card__btn">
                            <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -179,7 +184,7 @@
                                  fill="white" />
                            </svg>
                            <span>Add to Cart</span>
-                        </button>
+                        </div>
                      </a>
                   </li>
                   <li class="card">
@@ -196,7 +201,7 @@
                               <p class="card__price">$52.00</p>
                            </div>
                         </article>
-                        <button class="card__btn">
+                        <div class="card__btn">
                            <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -204,7 +209,7 @@
                                  fill="white" />
                            </svg>
                            <span>Add to Cart</span>
-                        </button>
+                        </div>
                      </a>
                   </li>
                   <li class="card">
@@ -221,7 +226,7 @@
                               <p class="card__price">$52.00</p>
                            </div>
                         </article>
-                        <button class="card__btn">
+                        <div class="card__btn">
                            <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -229,7 +234,7 @@
                                  fill="white" />
                            </svg>
                            <span>Add to Cart</span>
-                        </button>
+                        </div>
                      </a>
                   </li>
                   <li class="card">
@@ -246,7 +251,7 @@
                               <p class="card__price">$52.00</p>
                            </div>
                         </article>
-                        <button class="card__btn">
+                        <div class="card__btn">
                            <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -254,7 +259,7 @@
                                  fill="white" />
                            </svg>
                            <span>Add to Cart</span>
-                        </button>
+                        </div>
                      </a>
                   </li>
                   <li class="card">
@@ -271,7 +276,7 @@
                               <p class="card__price">$52.00</p>
                            </div>
                         </article>
-                        <button class="card__btn">
+                        <div class="card__btn">
                            <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -279,7 +284,7 @@
                                  fill="white" />
                            </svg>
                            <span>Add to Cart</span>
-                        </button>
+                        </div>
                      </a>
                   </li>
                   <li class="card">
@@ -296,7 +301,7 @@
                               <p class="card__price">$52.00</p>
                            </div>
                         </article>
-                        <button class="card__btn">
+                        <div class="card__btn">
                            <svg width="27" height="25" viewBox="0 0 27 25" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -304,7 +309,7 @@
                                  fill="white" />
                            </svg>
                            <span>Add to Cart</span>
-                        </button>
+                        </div>
                      </a>
                   </li>
                </ul>
@@ -349,8 +354,8 @@
          </section>
       </div>
       <footer>
-         <section class="subscribe--bgc">
-            <div class="subscribe--bgc--opacity">
+         <section class="subscribe_bgc">
+            <div class="subscribe_bgc-opacity">
                <div class="subscribe container">
                   <div class="subscribe__left">
                      <img src="img/footer_center_photo.png" alt="photo">
@@ -376,7 +381,7 @@
                   <li class="link__soc link__soc_mg"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                   <li class="link__soc link__soc_mg"><a href="#"><i class="fab fa-instagram"></i></a></li>
                   <li class="link__soc link__soc_mg"><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                  <li class="link__soc"><a href="#"><i class="fab fa-twitter"></i></a></i></li>
+                  <li class="link__soc"><a href="#"><i class="fab fa-twitter"></i></a></li>
                </ul>
             </div>
          </div>
