@@ -1,0 +1,210 @@
+.cart {
+   padding: 96px 0 128px;
+   display: flex;
+   justify-content: space-between;
+   &-product {
+      width: 652px;
+      &__item {
+         display: flex;
+         width: 100%;
+         height: 306px;
+         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+         margin-bottom: 40px;
+         & img {
+            width: 262px;
+            height: 100%;
+         }
+      }
+      &__info {
+         display: flex;
+         flex-direction: column;
+         padding: 22px 22px 62px 31px;
+         box-sizing: border-box;
+         font-size: 22px;
+         line-height: 26px;
+         color: #575757;
+         width: 100%;
+         & button {
+            border: none;
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            background-color: transparent;
+            & svg {
+               fill: #6f6e6e;
+               &:hover {
+                  fill: $color_pink;
+               }
+               &:active {
+                  fill: #222222;
+               }
+            }
+         }
+         &_pb {
+            padding-bottom: 6px;
+         }
+         &_pr {
+            padding-right: 5px;
+         }
+         & input {
+            margin-left: 24px;
+            padding: 1px 0 1px 16px;
+            border: 1px solid #eaeaea;
+            width: 43px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 22px;
+            color: #656565;
+            &:focus {
+               outline: 1px solid $color_pink;
+            }
+         }
+      }
+      &__name {
+         text-transform: uppercase;
+         font-size: 24px;
+         line-height: 29px;
+         color: #222222;
+         padding-bottom: 42px;
+         width: 200px;
+      }
+   }
+   &__btn {
+      display: flex;
+      justify-content: space-between;
+      &-item {
+         padding: 16px 40px;
+         color: #000000;
+         background-color: #ffffff;
+         border: 1px solid #a4a4a4;
+         text-transform: uppercase;
+         &:hover {
+            background-color: $color_pink;
+            color: #ffffff;
+         }
+         &:active {
+            background-color: red;
+            color: #ffffff;
+         }
+      }
+   }
+   &__form {
+      & .adress {
+         display: flex;
+         flex-direction: column;
+         padding: 22px 0 57.5px;
+         box-sizing: border-box;
+         &__heading {
+            text-transform: uppercase;
+            padding-bottom: 20.5px;
+            font-size: 16px;
+            line-height: 19px;
+            color: #222222;
+         }
+         & input {
+            width: 360px;
+            border: 1px solid #a4a4a4;
+            padding: 12.5px 0 15.5px 16.73px;
+            box-sizing: border-box;
+            margin-bottom: 21px;
+            &:focus {
+               outline: 3px solid $color_pink;
+            }
+         }
+         & button {
+            width: 100px;
+            height: 34px;
+            text-align: center;
+            border: 1px solid #a4a4a4;
+            background-color: transparent;
+            color: #a4a4a4;
+            font-size: 11px;
+            line-height: 13px;
+            text-transform: uppercase;
+            &:hover {
+               background-color: $color_pink;
+               color: #ffffff;
+            }
+            &:active {
+               background-color: red;
+               color: #ffffff;
+            }
+         }
+      }
+      & .order {
+         width: 360px;
+         height: 214px;
+         background-color: #f5f3f3;
+         padding: 39px 43px 42px;
+         box-sizing: border-box;
+         & div {
+            display: flex;
+            justify-content: end;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+         }
+         & span {
+            padding-left: 23px;
+         }
+         &__text {
+            font-size: 16px;
+            line-height: 19px;
+            &_mini {
+               font-size: 11px;
+               line-height: 13px;
+               & span {
+                  font-weight: 400;
+               }
+            }
+            & span {
+               font-weight: 400;
+               color: $color_pink;
+            }
+         }
+         & button {
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            text-transform: uppercase;
+            color: #ffffff;
+            background-color: #f16d7f;
+            border: none;
+            position: relative;
+            margin-top: 27px;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 300;
+            &:hover {
+               background-color: #ffffff;
+               color: #f16d7f;
+            }
+            &:active {
+               background-color: red;
+               color: #ffffff;
+            }
+            &::before {
+               content: "";
+               position: absolute;
+               top: -15px;
+               left: 0;
+               display: block;
+               background-color: #e2e2e2;
+               width: 100%;
+               height: 1px;
+            }
+         }
+      }
+   }
+}
+
+.adress__input_first::placeholder {
+   color: #b1b1b1;
+   font-size: 13px;
+   line-height: 16px;
+}
+
+.adress__input::placeholder {
+   color: #222222b0;
+   font-size: 13px;
+   line-height: 16px;
+}
