@@ -3,6 +3,8 @@
    justify-content: space-between;
    align-items: center;
    min-height: $height_header;
+   padding: 0 15px;
+   box-sizing: border-box;
    &_bgc {
       background: #222222;
       width: 100%;
