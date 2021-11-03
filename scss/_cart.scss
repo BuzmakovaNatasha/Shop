@@ -1,50 +1,39 @@
 .cart {
-   padding: 96px 0 128px;
+   padding-top: 96px;
+   padding-bottom: 128px;
+   box-sizing: border-box;
    display: flex;
    justify-content: space-between;
    &-product {
-      width: 652px;
+      max-width: 652px;
+      width: 100%;
       &__item {
          display: flex;
-         width: 100%;
          height: 306px;
          box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
          margin-bottom: 40px;
+         width: 100%;
          & img {
-            width: 262px;
+            display: block;
+            max-width: 262px;
+            width: 100%;
             height: 100%;
          }
       }
       &__info {
          display: flex;
          flex-direction: column;
-         padding: 22px 22px 62px 31px;
+         padding: 22px 22px 0 31px;
          box-sizing: border-box;
          font-size: 22px;
          line-height: 26px;
          color: #575757;
          width: 100%;
-         & button {
-            border: none;
-            display: flex;
-            justify-content: end;
-            width: 100%;
-            background-color: transparent;
-            & svg {
-               fill: #6f6e6e;
-               &:hover {
-                  fill: $color_pink;
-               }
-               &:active {
-                  fill: #222222;
-               }
-            }
+         &_mb {
+            margin-bottom: 6px;
          }
-         &_pb {
-            padding-bottom: 6px;
-         }
-         &_pr {
-            padding-right: 5px;
+         &_mr {
+            margin-right: 5px;
          }
          & input {
             margin-left: 24px;
@@ -60,20 +49,42 @@
             }
          }
       }
+      &__name-and-cross {
+         display: flex;
+         justify-content: space-between;
+         align-items: flex-start;
+         padding-bottom: 42px;
+         box-sizing: border-box;
+         & button {
+            border: none;
+            background-color: transparent;
+            & svg {
+               fill: #6f6e6e;
+               width: 18px;
+               height: 18px;
+               &:hover {
+                  fill: $color_pink;
+               }
+               &:active {
+                  fill: #222222;
+               }
+            }
+         }
+      }
       &__name {
          text-transform: uppercase;
          font-size: 24px;
          line-height: 29px;
          color: #222222;
-         padding-bottom: 42px;
-         width: 200px;
+         max-width: 200px;
       }
    }
    &__btn {
       display: flex;
       justify-content: space-between;
       &-item {
-         padding: 16px 40px;
+         width: 234px;
+         padding: 16px 0;
          color: #000000;
          background-color: #ffffff;
          border: 1px solid #a4a4a4;
@@ -89,24 +100,27 @@
       }
    }
    &__form {
+      display: flex;
+      flex-direction: column;
       & .adress {
          display: flex;
          flex-direction: column;
          padding: 22px 0 57.5px;
          box-sizing: border-box;
+         max-width: 360px;
+         width: 100%;
          &__heading {
             text-transform: uppercase;
-            padding-bottom: 20.5px;
             font-size: 16px;
             line-height: 19px;
             color: #222222;
          }
          & input {
-            width: 360px;
+            width: 100%;
             border: 1px solid #a4a4a4;
             padding: 12.5px 0 15.5px 16.73px;
             box-sizing: border-box;
-            margin-bottom: 21px;
+            margin-top: 21px;
             &:focus {
                outline: 3px solid $color_pink;
             }
@@ -121,6 +135,7 @@
             font-size: 11px;
             line-height: 13px;
             text-transform: uppercase;
+            margin-top: 24px;
             &:hover {
                background-color: $color_pink;
                color: #ffffff;

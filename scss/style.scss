@@ -14,16 +14,79 @@
 @import "_cart";
 @import "_registration";
 
-@media (max-width: 768px) {
+@media (max-width: 1079px) {
    .container {
-      max-width: 734px;
+      padding-left: 16px;
+      padding-right: 16px;
+      box-sizing: border-box;
+   }
+   .categories {
+      justify-content: space-around;
+   }
+   .cards-list {
+      justify-content: center;
+   }
+   .card {
+      &:nth-child(odd) {
+         margin: 0 8px 30px 0;
+      }
+      &:nth-child(even) {
+         margin: 0 0 30px 8px;
+      }
+      &_last {
+         display: none;
+      }
+   }
+   .product {
+      &__box {
+         padding: 0;
+      }
+   }
+}
+
+@media (max-width: 850px) {
+   .container {
+      padding-left: 16px;
+      padding-right: 16px;
+      box-sizing: border-box;
+   }
+   .cart {
+      padding-top: 59px;
+      flex-direction: column;
+      &-product {
+         max-width: 100%;
+      }
+      &__btn {
+         display: flex;
+         justify-content: center;
+         &-item {
+            margin: 0 25px;
+         }
+      }
+      &__form {
+         flex-direction: row;
+         align-items: center;
+         justify-content: space-between;
+         padding: 64.5px 0 0;
+         & .adress {
+            padding: 0;
+         }
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .menu {
+      &-list {
+         min-height: 367px;
+      }
    }
    .top {
       &__box {
          height: 367px;
       }
       &__heading {
-         margin-right: 0;
+         margin-right: 15px;
       }
       &__title {
          font-size: 44px;
@@ -35,7 +98,8 @@
       }
    }
    .categories {
-      padding: 0 0 154px;
+      justify-content: space-between;
+      padding-bottom: 154px;
       &__link {
          width: 232px;
          &_accesories {
@@ -58,7 +122,8 @@
    }
    .subscribe {
       flex-direction: column;
-      padding: 53px 0 140px;
+      padding-top: 53px;
+      padding-bottom: 140px;
       &__left {
          margin: 0 0 60px;
       }
@@ -70,6 +135,9 @@
          &-subtitle {
             line-height: 27px;
          }
+      }
+      &__newletter {
+         margin-right: 0;
       }
    }
    .filter {
@@ -92,11 +160,6 @@
    }
    .product {
       height: 624px;
-      &__box {
-         & img {
-            height: 565px;
-         }
-      }
       &-info {
          top: 624px;
       }
@@ -107,39 +170,60 @@
    .card {
       margin-bottom: 16px;
    }
-   .card_last {
-      display: none;
-   }
-   .cart {
-      padding: 59px 0 128px;
-      flex-direction: column;
-      align-items: center;
-      &-product {
-         width: 734px;
-      }
-      &__btn {
-         margin: 62.5px 114px 0;
-      }
-      &__form {
-         display: flex;
-         align-items: center;
-         padding: 64.5px 0 0;
-         & .adress {
-            padding: 0 16px 0 0;
-         }
-      }
-   }
    .registration {
-      padding: 40px 0 96px;
+      padding-top: 40px;
+      padding-bottom: 96px;
       &__text {
-         width: 354px;
+         padding-left: 22.5px;
       }
    }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 767px) {
+   .card {
+      &:nth-child(odd) {
+         margin: 0 8px 30px;
+      }
+      &:nth-child(even) {
+         margin: 0 8px 30px;
+      }
+      &_last {
+         display: block;
+      }
+   }
+}
+
+@media (max-width: 727px) {
+   .categories {
+      justify-content: space-around;
+   }
+   .product-info__price {
+      &::after {
+         left: -279px;
+         width: 590px;
+      }
+   }
+}
+
+@media (max-width: 600px) {
+   .product-info__price {
+      &::after {
+         left: -209px;
+         width: 450px;
+      }
+   }
+   .cart__form {
+      flex-direction: column;
+      & .adress {
+         padding-bottom: 48.5px;
+      }
+   }
+}
+
+@media (max-width: 480px) {
    .container {
-      max-width: 359px;
+      padding-left: 9px;
+      padding-right: 9px;
    }
    .header {
       &__contacts {
@@ -155,6 +239,7 @@
          background-image: none;
       }
       &__heading {
+         margin-right: 0;
          &::before {
             height: 61px;
             top: 5px;
@@ -181,7 +266,7 @@
       }
    }
    .subscribe {
-      padding: 53px 0 109px;
+      padding-bottom: 109px;
       & p {
          font-size: 18px;
          line-height: 22px;
@@ -201,7 +286,8 @@
       &__content {
          display: flex;
          flex-direction: column-reverse;
-         padding: 43px 0 9px;
+         padding-top: 43px;
+         padding-bottom: 9px;
       }
       &__copy {
          padding-top: 40px;
@@ -210,9 +296,6 @@
    .breadcrumb {
       justify-content: center;
       flex-direction: column;
-      &__heading {
-         margin-bottom: 32px;
-      }
    }
    .filter {
       &__box {
@@ -247,6 +330,9 @@
       }
    }
    .product {
+      &__box {
+         padding: 0;
+      }
       &-info {
          &__text {
             max-width: 326px;
@@ -269,5 +355,56 @@
    }
    .cards__page-product {
       padding: 664px 0 0;
+   }
+   .cart {
+      padding-top: 39px;
+      padding-bottom: 96px;
+      &-product {
+         &__item {
+            height: 188px;
+            & img {
+               max-width: 144px;
+            }
+         }
+         &__info {
+            padding: 13px 17px 0 17px;
+            font-size: 14px;
+            line-height: 17px;
+         }
+         &__name-and-cross {
+            padding-bottom: 25px;
+            & button {
+               & svg {
+                  width: 10px;
+                  height: 11px;
+               }
+            }
+         }
+         &__name {
+            font-size: 16px;
+            line-height: 19.2px;
+            max-width: 144px;
+         }
+      }
+      &__btn {
+         justify-content: space-between;
+         &-item {
+            margin: 0;
+            font-size: 12px;
+            line-height: 14px;
+            width: 174px;
+            padding: 9px 0;
+         }
+      }
+   }
+   .registration {
+      flex-direction: column;
+      align-items: center;
+      &__form {
+         margin-bottom: 40px;
+      }
+      &__text {
+         padding-left: 0;
+      }
    }
 }

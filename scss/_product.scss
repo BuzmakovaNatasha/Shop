@@ -2,12 +2,31 @@
    background-color: #f7f7f7;
    height: 777px;
    &__box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       position: relative;
+   }
+   &__photo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & button {
+         width: 47px;
+         height: 47px;
+         background-color: rgba(42, 42, 42, 0.15);
+         border: none;
+         &:hover i {
+            color: $color_pink;
+         }
+         &:active i {
+            color: #ffffff;
+         }
+         & i {
+            font-size: 22px;
+            color: #000000;
+         }
+      }
       & img {
-         height: 724px;
+         max-width: 597px;
+         width: 100%;
       }
    }
    &-info {
@@ -22,6 +41,7 @@
       width: 100%;
       text-align: center;
       padding: 64.13px 0 65px;
+      box-sizing: border-box;
       &__heading {
          font-size: 18px;
          line-height: 22px;

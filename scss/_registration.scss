@@ -1,18 +1,21 @@
 .registration {
    display: flex;
    justify-content: space-between;
-   padding: 64px 0 96px;
+   padding-top: 64px;
+   padding-bottom: 96px;
+   box-sizing: border-box;
    &__form {
       display: flex;
       flex-direction: column;
-      width: 360px;
+      max-width: 360px;
       & span {
-         padding-bottom: 20.5px;
+         margin-bottom: 20.5px;
          font-size: 16px;
          line-height: 19px;
       }
       & input {
          padding: 12.5px 0 15.5px 16px;
+         box-sizing: border-box;
          margin-bottom: 21px;
          border: 1px solid #a4a4a4;
          &::placeholder {
@@ -36,7 +39,7 @@
          }
       }
       & p {
-         padding-bottom: 36px;
+         margin-bottom: 36px;
       }
       & button {
          width: 167px;
@@ -68,19 +71,21 @@
    &__text {
       display: flex;
       flex-direction: column;
-      width: 652px;
       color: #000000;
       font-size: 24px;
       line-height: 29px;
+      padding-left: 128px;
+      box-sizing: border-box;
       & span {
+         display: block;
          text-transform: uppercase;
-         padding-bottom: 22px;
+         margin-bottom: 22px;
       }
       & p {
-         padding-bottom: 21px;
+         margin-bottom: 21px;
       }
       & li {
-         padding-bottom: 16px;
+         margin-bottom: 16px;
          list-style-image: url(../img/checkmark.svg);
          list-style-position: inside;
       }
