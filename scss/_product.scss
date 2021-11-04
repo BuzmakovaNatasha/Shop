@@ -1,36 +1,41 @@
 .product {
    background-color: #f7f7f7;
-   height: 777px;
+   position: relative;
+   &__btn-item {
+      position: absolute;
+      top: 40%;
+      z-index: 10;
+      width: 47px;
+      height: 47px;
+      background-color: rgba(42, 42, 42, 0.15);
+      border: none;
+      &:hover i {
+         color: $color_pink;
+      }
+      &:active i {
+         color: #ffffff;
+      }
+      & i {
+         font-size: 22px;
+         color: #000000;
+      }
+      &_right {
+         right: 0;
+      }
+   }
    &__box {
       position: relative;
-   }
-   &__photo {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      & button {
-         width: 47px;
-         height: 47px;
-         background-color: rgba(42, 42, 42, 0.15);
-         border: none;
-         &:hover i {
-            color: $color_pink;
-         }
-         &:active i {
-            color: #ffffff;
-         }
-         & i {
-            font-size: 22px;
-            color: #000000;
-         }
-      }
+      height: 776px;
       & img {
          max-width: 597px;
          width: 100%;
       }
    }
    &-info {
-      max-width: 1140px;
+      max-width: 100%;
       position: absolute;
       top: 712px;
       display: flex;
