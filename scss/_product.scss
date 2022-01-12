@@ -55,6 +55,16 @@
          text-transform: uppercase;
          &_mini {
             text-transform: uppercase;
+            position: relative;
+            &::after {
+               content: "";
+               position: absolute;
+               left: 30%;
+               top: 27px;
+               width: 63px;
+               height: 3px;
+               background-color: #ef5b70;
+            }
          }
       }
       &__text {

@@ -1,226 +1,226 @@
 .cart {
-   padding-top: 96px;
-   padding-bottom: 128px;
-   box-sizing: border-box;
-   display: flex;
-   justify-content: space-between;
-   &-product {
-      max-width: 652px;
-      width: 100%;
-      &__item {
-         display: flex;
-         height: 306px;
-         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-         margin-bottom: 40px;
-         width: 100%;
-         & img {
-            display: block;
-            max-width: 262px;
+    padding-top: 96px;
+    padding-bottom: 128px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    &-product {
+        max-width: 652px;
+        width: 100%;
+        &__item {
+            display: flex;
+            height: 306px;
+            box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+            margin-bottom: 40px;
             width: 100%;
-            height: 100%;
-         }
-      }
-      &__info {
-         display: flex;
-         flex-direction: column;
-         padding: 22px 22px 0 31px;
-         box-sizing: border-box;
-         font-size: 22px;
-         line-height: 26px;
-         color: #575757;
-         width: 100%;
-         &_mb {
-            margin-bottom: 6px;
-         }
-         &_mr {
-            margin-right: 5px;
-         }
-         & input {
-            margin-left: 24px;
-            padding: 1px 0 1px 16px;
-            border: 1px solid #eaeaea;
-            width: 43px;
-            text-align: center;
-            font-size: 18px;
-            line-height: 22px;
-            color: #656565;
-            &:focus {
-               outline: 1px solid $color_pink;
+            & img {
+                display: block;
+                max-width: 262px;
+                width: 100%;
+                height: 100%;
             }
-         }
-      }
-      &__name-and-cross {
-         display: flex;
-         justify-content: space-between;
-         align-items: flex-start;
-         padding-bottom: 42px;
-         box-sizing: border-box;
-         & button {
-            border: none;
-            background-color: transparent;
-            & svg {
-               fill: #6f6e6e;
-               width: 18px;
-               height: 18px;
-               &:hover {
-                  fill: $color_pink;
-               }
-               &:active {
-                  fill: #222222;
-               }
-            }
-         }
-      }
-      &__name {
-         text-transform: uppercase;
-         font-size: 24px;
-         line-height: 29px;
-         color: #222222;
-         max-width: 200px;
-      }
-   }
-   &__btn {
-      display: flex;
-      justify-content: space-between;
-      &-item {
-         width: 234px;
-         padding: 16px 0;
-         color: #000000;
-         background-color: #ffffff;
-         border: 1px solid #a4a4a4;
-         text-transform: uppercase;
-         &:hover {
-            background-color: $color_pink;
-            color: #ffffff;
-         }
-         &:active {
-            background-color: red;
-            color: #ffffff;
-         }
-      }
-   }
-   &__form {
-      display: flex;
-      flex-direction: column;
-      margin-left: 10px;
-      & .adress {
-         display: flex;
-         flex-direction: column;
-         padding: 22px 0 57.5px;
-         box-sizing: border-box;
-         max-width: 360px;
-         width: 100%;
-         &__heading {
-            text-transform: uppercase;
-            font-size: 16px;
-            line-height: 19px;
-            color: #222222;
-         }
-         & input {
-            width: 100%;
-            border: 1px solid #a4a4a4;
-            padding: 12.5px 0 15.5px 16.73px;
+        }
+        &__info {
+            display: flex;
+            flex-direction: column;
+            padding: 22px 22px 0 31px;
             box-sizing: border-box;
-            margin-top: 21px;
-            &:focus {
-               outline: 3px solid $color_pink;
+            font-size: 22px;
+            line-height: 26px;
+            color: #575757;
+            width: 100%;
+            &_mb {
+                margin-bottom: 6px;
             }
-         }
-         & button {
-            width: 100px;
-            height: 34px;
-            text-align: center;
-            border: 1px solid #a4a4a4;
-            background-color: transparent;
-            color: #a4a4a4;
-            font-size: 11px;
-            line-height: 13px;
+            &_mr {
+                margin-right: 5px;
+            }
+            & input {
+                margin-left: 24px;
+                padding: 1px 0 1px 16px;
+                border: 1px solid #eaeaea;
+                width: 43px;
+                text-align: center;
+                font-size: 18px;
+                line-height: 22px;
+                color: #656565;
+                &:focus {
+                    outline: 1px solid $color_pink;
+                }
+            }
+        }
+        &__name-and-cross {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 42px;
+            box-sizing: border-box;
+            & button {
+                border: none;
+                background-color: transparent;
+                & svg {
+                    fill: #6f6e6e;
+                    width: 18px;
+                    height: 18px;
+                    &:hover {
+                        fill: $color_pink;
+                    }
+                    &:active {
+                        fill: #222222;
+                    }
+                }
+            }
+        }
+        &__name {
             text-transform: uppercase;
-            margin-top: 24px;
+            font-size: 24px;
+            line-height: 29px;
+            color: #222222;
+            max-width: 200px;
+        }
+    }
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        &-item {
+            width: 234px;
+            padding: 16px 0;
+            color: #000000;
+            background-color: #ffffff;
+            border: 1px solid #a4a4a4;
+            text-transform: uppercase;
             &:hover {
-               background-color: $color_pink;
-               color: #ffffff;
+                background-color: $color_pink;
+                color: #ffffff;
             }
             &:active {
-               background-color: red;
-               color: #ffffff;
+                background-color: red;
+                color: #ffffff;
             }
-         }
-      }
-      & .order {
-         width: 360px;
-         height: 214px;
-         background-color: #f5f3f3;
-         padding: 39px 43px 42px;
-         box-sizing: border-box;
-         & div {
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        & .adress {
             display: flex;
-            justify-content: end;
-            text-transform: uppercase;
-            padding-bottom: 12px;
-         }
-         & span {
-            padding-left: 23px;
-         }
-         &__text {
-            font-size: 16px;
-            line-height: 19px;
-            &_mini {
-               font-size: 11px;
-               line-height: 13px;
-               & span {
-                  font-weight: 400;
-               }
+            flex-direction: column;
+            padding: 22px 0 57.5px;
+            box-sizing: border-box;
+            max-width: 360px;
+            width: 100%;
+            &__heading {
+                text-transform: uppercase;
+                font-size: 16px;
+                line-height: 19px;
+                color: #222222;
+            }
+            & input {
+                width: 100%;
+                border: 1px solid #a4a4a4;
+                padding: 12.5px 0 15.5px 16.73px;
+                box-sizing: border-box;
+                margin-top: 21px;
+                &:focus {
+                    outline: 3px solid $color_pink;
+                }
+            }
+            & button {
+                width: 100px;
+                height: 34px;
+                text-align: center;
+                border: 1px solid #a4a4a4;
+                background-color: transparent;
+                color: #a4a4a4;
+                font-size: 11px;
+                line-height: 13px;
+                text-transform: uppercase;
+                margin-top: 24px;
+                &:hover {
+                    background-color: $color_pink;
+                    color: #ffffff;
+                }
+                &:active {
+                    background-color: red;
+                    color: #ffffff;
+                }
+            }
+        }
+        & .order {
+            width: 360px;
+            height: 214px;
+            background-color: #f5f3f3;
+            padding: 39px 43px 42px;
+            box-sizing: border-box;
+            & div {
+                display: flex;
+                justify-content: end;
+                text-transform: uppercase;
+                padding-bottom: 12px;
             }
             & span {
-               font-weight: 400;
-               color: $color_pink;
+                padding-left: 23px;
             }
-         }
-         & button {
-            width: 100%;
-            padding: 15px 0;
-            text-align: center;
-            text-transform: uppercase;
-            color: #ffffff;
-            background-color: #f16d7f;
-            border: none;
-            position: relative;
-            margin-top: 27px;
-            font-size: 16px;
-            line-height: 19px;
-            font-weight: 300;
-            &:hover {
-               background-color: #ffffff;
-               color: #f16d7f;
+            &__text {
+                font-size: 16px;
+                line-height: 19px;
+                &_mini {
+                    font-size: 11px;
+                    line-height: 13px;
+                    & span {
+                        font-weight: 400;
+                    }
+                }
+                & span {
+                    font-weight: 400;
+                    color: $color_pink;
+                }
             }
-            &:active {
-               background-color: red;
-               color: #ffffff;
+            & button {
+                width: 100%;
+                padding: 15px 0;
+                text-align: center;
+                text-transform: uppercase;
+                color: #ffffff;
+                background-color: #f16d7f;
+                border: none;
+                position: relative;
+                margin-top: 27px;
+                font-size: 16px;
+                line-height: 19px;
+                font-weight: 300;
+                &:hover {
+                    background-color: #ffffff;
+                    color: #f16d7f;
+                }
+                &:active {
+                    background-color: red;
+                    color: #ffffff;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -15px;
+                    left: 0;
+                    display: block;
+                    background-color: #e2e2e2;
+                    width: 100%;
+                    height: 1px;
+                }
             }
-            &::before {
-               content: "";
-               position: absolute;
-               top: -15px;
-               left: 0;
-               display: block;
-               background-color: #e2e2e2;
-               width: 100%;
-               height: 1px;
-            }
-         }
-      }
-   }
+        }
+    }
 }
 
 .adress__input_first::placeholder {
-   color: #b1b1b1;
-   font-size: 13px;
-   line-height: 16px;
+    color: #b1b1b1;
+    font-size: 13px;
+    line-height: 16px;
 }
 
 .adress__input::placeholder {
-   color: #222222b0;
-   font-size: 13px;
-   line-height: 16px;
+    color: #222222b0;
+    font-size: 13px;
+    line-height: 16px;
 }
