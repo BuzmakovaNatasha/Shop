@@ -1,0 +1,41 @@
+$color_pink: #f16d7f;
+$height_header: 75px;
+$height_top: 764px;
+$height_top_catalog: 148px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    font-style: normal;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.not-footer {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.text_pink {
+    color: $color_pink;
+}

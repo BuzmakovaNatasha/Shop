@@ -1,0 +1,42 @@
+.top {
+    background: #f1e4e6;
+    width: 100%;
+    &__box {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        height: $height_top;
+        background-image: url(../img/top__photo.png);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+    &__heading {
+        text-transform: uppercase;
+        position: relative;
+        margin-right: 94px;
+        &::before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 92px;
+            background-color: $color_pink;
+            position: absolute;
+            top: -1px;
+            left: -28px;
+        }
+    }
+    &__title {
+        font-weight: 900;
+        font-size: 48px;
+        line-height: 58px;
+    }
+    &__subtitle {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        & span {
+            color: $color_pink;
+        }
+    }
+}
