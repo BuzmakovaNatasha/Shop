@@ -1,18 +1,19 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
+const path = require('path');
 
 /**
  * Активируем мидлвары
  */
 app.use(express.json()); // Даем знать приложению, что работаем с json'ом
-app.use('/', express.static('./src/public')); // запросы в корень нашего сайт отдают содержимое public
+app.use('/', express.static(path.resolve(__dirname, '../public'))); // запросы в корень нашего сайт отдают содержимое public
 
 /**
  * API Каталога на главной странице
  */
 app.get('/api/products', (req, res) => {
-    fs.readFile('./src/server/db/products.json', 'utf-8', (err, data) => {
+    fs.readFile((path.resolve(__dirname, './db/products.json')), 'utf-8', (err, data) => {
         if (err) {
             res.send(JSON.stringify({ result: 0, text: err }));
         } else {
@@ -25,7 +26,7 @@ app.get('/api/products', (req, res) => {
  * API Каталога на странице 'catalog.html'
  */
 app.get('/api/catalog', (req, res) => {
-    fs.readFile('./src/server/db/products.json', 'utf-8', (err, data) => {
+    fs.readFile((path.resolve(__dirname, './db/products.json')), 'utf-8', (err, data) => {
         if (err) {
             res.send(JSON.stringify({ result: 0, text: err }));
         } else {
@@ -38,7 +39,7 @@ app.get('/api/catalog', (req, res) => {
  * API Каталога на странице 'product{id}.html'
  */
 app.get('/api/catalogPageProduct', (req, res) => {
-    fs.readFile('./src/server/db/products.json', 'utf-8', (err, data) => {
+    fs.readFile((path.resolve(__dirname, './db/products.json')), 'utf-8', (err, data) => {
         if (err) {
             res.send(JSON.stringify({ result: 0, text: err }));
         } else {
@@ -51,7 +52,7 @@ app.get('/api/catalogPageProduct', (req, res) => {
  * API Корзины
  */
 app.get('/api/cart', (req, res) => {
-    fs.readFile('./src/server/db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/userCart.json'), 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
         } else {
@@ -64,7 +65,7 @@ app.get('/api/cart', (req, res) => {
  * API Описания товара на странице 'product.html'
  */
 app.get('/api/product', (req, res) => {
-    fs.readFile('./src/server/db/productShow.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/productShow.json'), 'utf-8', (err, data) => {
         if (err) {
             res.send(JSON.stringify({ result: 0, text: err }));
         } else {
@@ -75,7 +76,7 @@ app.get('/api/product', (req, res) => {
 
 // ID товара, страницу, которого надо показать
 app.post('/api/product/show', (req, res) => {
-    fs.readFile('./src/server/db/productShow.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/productShow.json'), 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
         } else {
@@ -83,7 +84,7 @@ app.post('/api/product/show', (req, res) => {
             const good = JSON.parse(data);
             good.content = [req.body];
             // пишем обратно
-            fs.writeFile('./src/server/db/productShow.json', JSON.stringify(good), (err) => {
+            fs.writeFile(path.resolve(__dirname, './db/productShow.json'), JSON.stringify(good), (err) => {
                 if (err) {
                     res.send('{"result": 0}');
                 } else {
@@ -96,7 +97,7 @@ app.post('/api/product/show', (req, res) => {
 
 // Добавление нового товара в корзину
 app.post('/api/cart', (req, res) => {
-    fs.readFile('./src/server/db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/userCart.json'), 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
         } else {
@@ -105,7 +106,7 @@ app.post('/api/cart', (req, res) => {
             // добавляем новый товар
             cart.contents.push(req.body);
             // пишем обратно
-            fs.writeFile('./src/server/db/userCart.json', JSON.stringify(cart), (err) => {
+            fs.writeFile(path.resolve(__dirname, './db/userCart.json'), JSON.stringify(cart), (err) => {
                 if (err) {
                     res.send('{"result": 0}');
                 } else {
@@ -118,7 +119,7 @@ app.post('/api/cart', (req, res) => {
 
 // Увеличиваем количество товара при нажатии на кнопку "Добавить в корзину", если такой товар уже добавлен
 app.put('/api/cart/add/:id', (req, res) => {
-    fs.readFile('./src/server/db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/userCart.json'), 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
         } else {
@@ -129,7 +130,7 @@ app.put('/api/cart/add/:id', (req, res) => {
             // изменяем количество
             find.quantity += req.body.quantity;
             // пишем обратно
-            fs.writeFile('./src/server/db/userCart.json', JSON.stringify(cart), (err) => {
+            fs.writeFile(path.resolve(__dirname, './db/userCart.json'), JSON.stringify(cart), (err) => {
                 if (err) {
                     res.send('{"result": 0}');
                 } else {
@@ -142,7 +143,7 @@ app.put('/api/cart/add/:id', (req, res) => {
 
 // Изменяем количество товара (при изменении значения input с количеством товара в корзине)
 app.put('/api/cart/:id', (req, res) => {
-    fs.readFile('./src/server/db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/userCart.json'), 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
         } else {
@@ -157,7 +158,7 @@ app.put('/api/cart/:id', (req, res) => {
                 find.quantity -= 1;
             }
             // пишем обратно
-            fs.writeFile('./src/server/db/userCart.json', JSON.stringify(cart), (err) => {
+            fs.writeFile(path.resolve(__dirname, './db/userCart.json'), JSON.stringify(cart), (err) => {
                 if (err) {
                     res.send('{"result": 0}');
                 } else {
@@ -170,7 +171,7 @@ app.put('/api/cart/:id', (req, res) => {
 
 // Удаление товара из корзины
 app.delete('/api/cart/:id', (req, res) => {
-    fs.readFile('./src/server/db/userCart.json', 'utf-8', (err, data) => {
+    fs.readFile(path.resolve(__dirname, './db/userCart.json'), 'utf-8', (err, data) => {
         if (err) {
             res.sendStatus(404, JSON.stringify({ result: 0, text: err }));
         } else {
@@ -185,7 +186,7 @@ app.delete('/api/cart/:id', (req, res) => {
                 cart.contents.splice(cart.contents.indexOf(findDel), 1);
             }
             // пишем обратно
-            fs.writeFile('./src/server/db/userCart.json', JSON.stringify(cart), (err) => {
+            fs.writeFile(path.resolve(__dirname, './db/userCart.json'), JSON.stringify(cart), (err) => {
                 if (err) {
                     res.send('{"result": 0}');
                 } else {
@@ -200,7 +201,7 @@ app.delete('/api/cart/:id', (req, res) => {
  * Запуск сервера
  * @type {string|number}
  */
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Listening ${port} port`);
 });
