@@ -1,0 +1,186 @@
+.product {
+    background-color: #f7f7f7;
+    position: relative;
+    &__btn-item {
+        position: absolute;
+        top: 40%;
+        z-index: 10;
+        width: 47px;
+        height: 47px;
+        background-color: rgba(42, 42, 42, 0.15);
+        border: none;
+        &:hover i {
+            color: $color_pink;
+        }
+        &:active i {
+            color: #ffffff;
+        }
+        & i {
+            font-size: 22px;
+            color: #000000;
+        }
+        &_right {
+            right: 0;
+        }
+    }
+    &__box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 776px;
+        & img {
+            max-width: 597px;
+            width: 100%;
+        }
+    }
+    &-info {
+        max-width: 100%;
+        position: absolute;
+        top: 712px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #eaeaea;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: center;
+        padding: 64.13px 0 65px;
+        box-sizing: border-box;
+        &__heading {
+            font-size: 18px;
+            line-height: 22px;
+            color: #4d4d4d;
+            padding: 27.23px 0 48.41px;
+            text-transform: uppercase;
+            &_mini {
+                text-transform: uppercase;
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 30%;
+                    top: 27px;
+                    width: 63px;
+                    height: 3px;
+                    background-color: #ef5b70;
+                }
+            }
+        }
+        &__text {
+            padding-bottom: 32.27px;
+            max-width: 555px;
+            color: #5e5e5e;
+        }
+        &__price {
+            padding-bottom: 130px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 65px;
+                left: -310px;
+                display: block;
+                width: 641px;
+                height: 1px;
+                background-color: #eaeaea;
+            }
+        }
+        &__filter {
+            display: flex;
+        }
+        &__btn {
+            margin-top: 49px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ff6a6a;
+            background-color: #ffffff;
+            padding: 14px 56.5px 14px 23.5px;
+            color: #f26376;
+            &:hover {
+                background-color: #f26376;
+                color: #ffffff;
+                & svg {
+                    fill: #ffffff;
+                }
+            }
+            &:active {
+                background-color: red;
+            }
+            &-text {
+                font-size: 16px;
+                line-height: 19px;
+                padding-left: 23px;
+            }
+            & svg {
+                fill: #ef5b70;
+            }
+        }
+    }
+}
+
+/*================= product-info__filter ================*/
+
+.filter_btn svg {
+    fill: #6f6e6e;
+}
+
+.filter-btn__text {
+    text-transform: uppercase;
+    padding-right: 9px;
+    color: #6f6e6e;
+    font-weight: 400;
+}
+
+.filter__color,
+.filter__size,
+.filter__quantity,
+.filter__trending,
+.filter__price {
+    position: relative;
+}
+
+.filter__color,
+.filter__size,
+.filter__trending {
+    margin-right: 23px;
+}
+
+.filter__color-input,
+.product-info__input_size,
+.filter__quantity-input {
+    display: none;
+}
+
+.dropdown-menu_color,
+.dropdown-menu_size,
+.dropdown-menu_quantity,
+.dropdown-menu_trending {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    display: none;
+    background-color: #ffffff;
+    padding: 9px;
+    width: 80%;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    text-transform: uppercase;
+    text-align: start;
+}
+
+.filter__color-input:checked ~ .dropdown-menu_color {
+    display: block;
+}
+
+.product-info__input_size:checked ~ .dropdown-menu_size {
+    display: block;
+}
+
+.filter__quantity-input:checked ~ .dropdown-menu_quantity {
+    display: block;
+}
+
+.cards__page-product {
+    padding: 664.5px 0 0;
+}
