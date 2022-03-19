@@ -1,15 +1,44 @@
 {
     "name": "shop",
     "version": "1.0.0",
-    "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "buildDev": "rmdir/s dist && npx webpack --mode=development --config webpack.server.config.js && npx webpack --mode=development --config webpack.dev.config.js",
+        "buildProd": "rmdir/s dist && npx webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.prod.config.js",
+        "start": "nodemon dist/server/server.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
+    "nodemonConfig": {
+        "ignore": [
+            "*.json"
+        ]
+    },
     "dependencies": {
-        "express": "^4.17.3"
-    }
+        "@babel/polyfill": "^7.12.1",
+        "express": "^4.17.3",
+        "nodemon": "^2.0.15"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.17.7",
+        "@babel/preset-env": "^7.16.11",
+        "babel-loader": "^8.2.3",
+        "copy-webpack-plugin": "^10.2.4",
+        "css-loader": "^6.7.1",
+        "html-loader": "^3.1.0",
+        "html-webpack-plugin": "^5.5.0",
+        "imagemin-webpack-plugin": "^2.4.2",
+        "mini-css-extract-plugin": "^2.6.0",
+        "node-sass": "^7.0.1",
+        "optimize-css-assets-webpack-plugin": "^6.0.1",
+        "sass": "^1.49.9",
+        "sass-loader": "^12.6.0",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-node-externals": "^3.0.0"
+    },
+    "description": ""
 }
