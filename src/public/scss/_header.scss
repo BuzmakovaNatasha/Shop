@@ -70,6 +70,10 @@
         &:active svg {
             fill: red;
         }
+        &-btn {
+            background-color: transparent;
+            border: none;
+        }
         &-counter {
             color: #e5e5e5;
             display: flex;
@@ -83,48 +87,73 @@
             top: -9px;
             right: -9px;
         }
-        & .cart__input {
-            display: none;
-        }
-        & .window-basket-list {
-            display: none;
+        &-box {
             width: 500px;
-            padding: 16px 33px;
+            padding: 15px;
             box-sizing: border-box;
             background-color: #ffffff;
             position: absolute;
             top: $height_header - 35px;
             right: 0;
-            z-index: 20;
-            & .card-inWindowBasket__item {
+            z-index: 100;
+            & .window-basket__item {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 margin-bottom: 10px;
                 background-color: #f1e4e6;
+                padding: 0 10px 0 0;
+                box-sizing: border-box;
                 & img {
                     width: 50px;
                 }
                 & h5 {
                     font-size: 14px;
+                    width: 180px;
                 }
                 & input {
                     width: 50px;
                 }
                 & p {
-                    padding-right: 10px;
                     box-sizing: border-box;
                     font-weight: 700;
+                    width: 80px;
+                    display: flex;
+                    justify-content: end;
+                }
+                & button {
+                    width: 30px;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: transparent;
+                    border: 1px solid $color_pink;
+                    border-radius: 5px;
+                    &:hover {
+                        background-color: $color_pink;
+                        & svg {
+                            fill: #fff;
+                        }
+                    }
+                    &:active {
+                        background-color: #000;
+                    }
+                    & svg {
+                        width: 20px;
+                        height: 20px;
+                        fill: $color_pink;
+                    }
                 }
             }
             & span {
                 display: flex;
                 justify-content: end;
-                margin-bottom: 10px;
             }
-            & div {
+            & .total {
                 display: flex;
-                justify-content: end;
+                justify-content: space-between;
+                align-items: center;
                 & a {
                     text-decoration: none;
                     border: 1px solid #000;
@@ -141,16 +170,9 @@
                         background-color: red;
                     }
                 }
-                & .total {
-                    margin-left: 5px;
-                }
             }
         }
     }
-}
-
-.cart__input:checked ~ .window-basket-list {
-    display: block;
 }
 
 .header_left,
